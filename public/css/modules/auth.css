@@ -1,0 +1,11 @@
+.login-form,
+.reset-password-form {
+  position: relative;
+  overflow-y: hidden;
+}
+
+.login-form .card,
+.reset-password-form .card {
+  margin-top: 10em;
+}
+

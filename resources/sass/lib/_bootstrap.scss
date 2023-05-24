@@ -1,0 +1,53 @@
+$enable-rounded: false;
+$font-size-base: 0.9rem;
+
+@import "~bootstrap/scss/bootstrap";
+@import "~startbootstrap-sb-admin-2/scss/sb-admin-2";
+@import "~bootstrap-daterangepicker/daterangepicker";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+
+  .outer-wrapper {
+    max-height: 100vh;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.form-control {
+  &:focus {
+    box-shadow: 0 0 2px 0 rgba(52, 144, 220, 0.25);
+  }
+
+  &.invalid {
+    &:focus {
+      box-shadow: 0 0 2px 0 rgba(227, 52, 47, 0.25);
+    }
+
+    ~.invalid {
+      order: 5;
+    }
+  }
+}
+
+select {
+  &[readonly] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    pointer-events: none;
+    touch-action: none;
+  }
+}

@@ -1,0 +1,122 @@
+$color: 'grey';
+
+$backgrounds: (
+  unchecked: matColor($color, 100),
+  hover: matColor($color, 300),
+  checked: matColor($color, 400),
+  disabled: matColor($color, 600),
+  disabledHover: matColor($color, 500)
+);
+
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .check-mark {
+        position: relative;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 1px solid $divider;
+        background-color: map-get($backgrounds, unchecked);
+        border-radius: 3px;
+        transition: ease-in-out 0.25s background-color;
+        transition: ease-in-out 0.25s opacity;
+        transition: ease-in-out 0.125s box-shadow;
+        // box-shadow: 0 0 1px 0 matColor($color, 600) inset;
+
+        &:after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            left: 0.3em;
+            top: 0.125em;
+            width: 0.3em;
+            height: 0.6em;
+            border: solid $text-icons;
+            text-align: center;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        + .checkbox-label {
+            margin-left: 1em;
+            padding-left: 10px;
+            font-size: 0.8em;
+        }
+    }
+
+    [type=checkbox] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            ~ .check-mark {
+                background-color: map-get($backgrounds, checked);
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &[onclick] {
+            ~ .check-mark {
+                cursor: not-allowed;
+                box-shadow: 0 0 3px 0 matColor($color, 700) inset;
+            }
+
+            &:not(:checked) {
+                ~ .check-mark {
+                    background-color: map-get($backgrounds, disabled);
+                }
+            }
+        }
+
+        &:disabled {
+            ~ .check-mark {
+                cursor: not-allowed;
+                background-color: map-get($backgrounds, disabled);
+            }
+        }
+    }
+
+    &:hover,
+    &:focus {
+
+        [type=checkbox] {
+            ~ .check-mark {
+                box-shadow: 0 0 3px 0 matColor($color, 600);
+            }
+
+            &:not([onclick]) {
+                ~ .check-mark {
+                    background-color: map-get($backgrounds, hover);
+                }
+            }
+
+            &:disabled {
+                ~ .check-mark {
+                    background-color: map-get($backgrounds, disabledHover);
+                }
+            }
+
+            &:checked {
+                ~ .check-mark {
+                    background-color: map-get($backgrounds, hover);
+                }
+            }
+        }
+    }
+}

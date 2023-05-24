@@ -1,0 +1,16 @@
+@import 'lib/font-awesome';
+@import 'lib/bootstrap';
+@import 'lib/datatables';
+@import 'lib/toastr';
+@import 'lib/jquery-confirm';
+
+@import 'config/variables';
+@import 'components/all';
+@import 'modules/shared/all';
+
+
+html,
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}

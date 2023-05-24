@@ -1,0 +1,16 @@
+{
+    "/js/components.js": "/js/components.js",
+    "/js/lib.js": "/js/lib.js",
+    "/css/app.css": "/css/app.css",
+    "/css/modules/ticket.css": "/css/modules/ticket.css",
+    "/css/modules/auth.css": "/css/modules/auth.css",
+    "/css/modules/dashboard.css": "/css/modules/dashboard.css",
+    "/js/modules/dashboard.js": "/js/modules/dashboard.js",
+    "/js/modules/manage/roles.js": "/js/modules/manage/roles.js",
+    "/js/modules/manage/users.js": "/js/modules/manage/users.js",
+    "/js/modules/notification.js": "/js/modules/notification.js",
+    "/js/modules/reports.js": "/js/modules/reports.js",
+    "/js/modules/ticket.js": "/js/modules/ticket.js",
+    "/js/modules/ticket/modal.js": "/js/modules/ticket/modal.js",
+    "/js/utils.js": "/js/utils.js"
+}

@@ -1,0 +1,33 @@
+@import '../../config/variables';
+
+@import 'modal';
+@import 'index';
+
+$intensity: 300;
+
+$status-list: 
+  (new              matColor('grey', $intensity)),
+  (open             matColor('yellow', $intensity)),
+  (in-progress      matColor('blue', $intensity)),
+  (needs-more-info  matColor('cyan', $intensity)),
+  (resolved         matColor('orange', $intensity)),
+  (closed           matColor('green', $intensity));
+
+$severity-list: 
+  (unclassified     matColor('blue-grey', $intensity)),
+  (low              matColor('light-green', $intensity)),
+  (medium           matColor('light-blue', $intensity)),
+  (high             matColor('amber', $intensity)),
+  (critical         matColor('red', $intensity));
+
+@each $status in $status-list {
+  .status-#{nth($status, 1)} {
+    background-color: #{nth($status, 2)};
+  }
+}
+
+@each $severity in $severity-list {
+  .severity-#{nth($severity, 1)} {
+    background-color: #{nth($severity, 2)};
+  }
+}

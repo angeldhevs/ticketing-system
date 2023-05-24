@@ -1,0 +1,96 @@
+.sidebar {
+  padding-top: 0;
+  color: $text-icons;
+  background-color: $primary-dark;
+  min-height: 100vh;
+  transition: margin-left 0.125s ease;
+  position: relative;
+
+  hr {
+    border: 1px solid $primary-light;
+  }
+
+  &.show {
+    margin-left: -$sidebar-width;
+  }
+
+  .sidebar-header {
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+    background-color: $primary-dark;
+
+    .app-name {
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+  }
+
+  >ul.nav {
+    .nav-item {
+      .nav-link {
+        padding: 0.5em 1em;
+        display: block;
+        color: $text-icons;
+        transition: background-color 0.25s ease;
+        transition: padding-left 0.25s ease;
+
+        i,
+        &::after {
+          color: inherit
+        }
+      }
+
+      &.active {
+        >.side-dt {
+          color: #fff !important;
+          background: #293846;
+        }
+      }
+
+      &:hover {
+        >.nav-link {
+          padding-left: 1.5em;
+          background-color: $primary-light;
+          color: $text-primary;
+
+          i,
+          &::after {
+            color: inherit
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      >.nav {
+        margin: 0;
+      }
+
+      .collapse {
+        background-color: $primary-dark;
+
+        @include media-breakpoint-down(sm) {
+          left: calc(6rem + 1rem / 2);
+        }
+      }
+    }
+
+    &.sticky-bottom {
+      border-top: 1px solid $divider;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 1em;
+    }
+  }
+
+  .sidebar-heading {
+    text-transform: uppercase;
+    background-color: $primary;
+    font-weight: 300;
+  }
+}

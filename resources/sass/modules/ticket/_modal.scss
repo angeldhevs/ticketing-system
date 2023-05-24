@@ -1,0 +1,253 @@
+$border-color: matColor('grey', 300);
+$background-color: matColor('grey', 100);
+
+#ticket-modal {
+  font-weight: 400;
+
+  .btn {
+    outline: none;
+    box-shadow: none;
+  }
+
+  label,
+  input,
+  select {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .modal-content {
+    border-radius: 0;
+    font-size: inherit;
+    position: relative;
+
+    .modal-header {
+      padding-top: 2rem;
+      border-radius: 0;
+      border-bottom: 0;
+      display: block;
+
+      .modal-top-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        background-color: $primary-dark;
+        color: $text-icons;
+
+        .modal-title {
+          float: left;
+          margin-right: auto;
+          padding-left: 10px;
+          text-transform: uppercase;
+          font-weight: 300;
+        }
+
+        .close {
+          float: right;
+          font-size: 0.875em;
+          margin: 0;
+          padding: 5px;
+          background-color: $primary-light;
+        }
+
+        &::before,
+        &::after {
+          clear: both;
+        }
+      }
+
+      >.row {
+        margin: 0 0 0.5em 0;
+      }
+
+      [name=ticket_title] {
+        font-size: 1.5em;
+      }
+
+      .detail-group {
+        h6 {
+          font-style: italic;
+          font-weight: bold;
+          background-color: $primary-light;
+          padding: 0.5em;
+        }
+
+        &:not(:last-of-type) {
+          border-right: 1px solid $divider;
+        }
+      }
+
+      .form-group {
+        .prev-status {
+          display: none;
+        }
+
+        .btn-save,
+        .btn-edit {
+          display: none;
+        }
+
+        .form-control,
+        .form-control-plaintext {
+          border: 1px solid $border-color;
+          height: calc(1.5em + 0.75rem + 2px);
+          padding: 0.25rem 0.5rem !important;
+          box-shadow: none;
+
+          &[readonly],
+          &[disabled] {
+            background-color: $background-color;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: $divider;
+            border-style: dotted;
+          }
+
+          &.invalid {
+            border-bottom: 1px solid matColor('red', 500);
+            background-color: matColor('red', 50);
+
+            +small.invalid {
+              width: 100%;
+              color: matColor('red', 500);
+
+              &:before {
+                color: inherit;
+                font-family: "Font Awesome 5 Free";
+                content: '\f00d  ';
+                font-style: normal;
+                font-weight: 900;
+                text-decoration: inherit;
+              }
+            }
+          }
+        }
+
+        .form-control-plaintext {
+          // background-color: matColor('grey', 50);
+        }
+
+        .input-group-prepend {
+          .input-group-text {
+            border-right: none;
+            background-color: transparent;
+          }
+        }
+
+        .input-group-append {
+          // border-bottom: 1px solid $divider;
+
+          .input-group-text,
+          .btn {
+            border: 1px solid $border-color;
+            border-left: none;
+            // background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &[data-mode=view] {
+    .modal-footer {
+
+      .btn-save,
+      .btn-clear,
+      .btn-cancel {
+        display: none;
+      }
+
+      .btn-update,
+      .btn-assign {
+        display: initial;
+      }
+    }
+
+    .form-group {
+      .btn-edit {
+        display: inline-block !important;
+      }
+
+      .btn-save {
+        display: none;
+      }
+    }
+  }
+
+  &[data-mode=create] {
+    .modal-footer {
+
+      .btn-save,
+      .btn-clear {
+        display: initial;
+      }
+
+      .btn-update,
+      .btn-assign,
+      .btn-cancel,
+      .btn-edit {
+        display: none;
+      }
+    }
+  }
+
+  &[data-mode=update],
+  &[data-mode=status_update],
+  &[data-mode=assign] {
+    .modal-footer {
+
+      .btn-save,
+      .btn-cancel {
+        display: initial;
+      }
+
+      .btn-edit,
+      .btn-assign,
+      .btn-clear {
+        display: none;
+      }
+    }
+  }
+
+  &[data-mode=hidden] {
+    .modal-footer {
+
+      .btn-save,
+      .btn-clear,
+      .btn-edit,
+      .btn-cancel {
+        display: none;
+      }
+    }
+  }
+
+  &[data-mode=status_update] {
+    .modal-footer {
+
+      .btn-save,
+      .btn-clear,
+      .btn-edit {
+        display: none;
+      }
+
+      .btn-cancel {
+        display: initial;
+      }
+    }
+
+    .form-group {
+      .btn-edit {
+        display: none !important;
+      }
+
+      .prev-status,
+      .btn-save {
+        display: inline-block !important;
+      }
+    }
+  }
+}

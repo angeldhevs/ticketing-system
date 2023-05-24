@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+#ticket-modal {
+  font-weight: 400;
+}
+
+#ticket-modal .btn {
+  outline: none;
+  box-shadow: none;
+}
+
+#ticket-modal label,
+#ticket-modal input,
+#ticket-modal select {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+#ticket-modal .modal-content {
+  border-radius: 0;
+  font-size: inherit;
+  position: relative;
+}
+
+#ticket-modal .modal-content .modal-header {
+  padding-top: 2rem;
+  border-radius: 0;
+  border-bottom: 0;
+  display: block;
+}
+
+#ticket-modal .modal-content .modal-header .modal-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background-color: #0288d1;
+  color: #ffffff;
+}
+
+#ticket-modal .modal-content .modal-header .modal-top-bar .modal-title {
+  float: left;
+  margin-right: auto;
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+#ticket-modal .modal-content .modal-header .modal-top-bar .close {
+  float: right;
+  font-size: 0.875em;
+  margin: 0;
+  padding: 5px;
+  background-color: #b3e5fc;
+}
+
+#ticket-modal .modal-content .modal-header .modal-top-bar::before,
+#ticket-modal .modal-content .modal-header .modal-top-bar::after {
+  clear: both;
+}
+
+#ticket-modal .modal-content .modal-header > .row {
+  margin: 0 0 0.5em 0;
+}
+
+#ticket-modal .modal-content .modal-header [name=ticket_title] {
+  font-size: 1.5em;
+}
+
+#ticket-modal .modal-content .modal-header .detail-group h6 {
+  font-style: italic;
+  font-weight: bold;
+  background-color: #b3e5fc;
+  padding: 0.5em;
+}
+
+#ticket-modal .modal-content .modal-header .detail-group:not(:last-of-type) {
+  border-right: 1px solid #bdbdbd;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .prev-status {
+  display: none;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .btn-save,
+#ticket-modal .modal-content .modal-header .form-group .btn-edit {
+  display: none;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .form-control,
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext {
+  border: 1px solid #e0e0e0;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.25rem 0.5rem !important;
+  box-shadow: none;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .form-control[readonly],
+#ticket-modal .modal-content .modal-header .form-group .form-control[disabled],
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext[readonly],
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext[disabled] {
+  background-color: #f5f5f5;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .form-control:focus,
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext:focus {
+  outline: none;
+  border-color: #bdbdbd;
+  border-style: dotted;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .form-control.invalid,
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext.invalid {
+  border-bottom: 1px solid #f44336;
+  background-color: #ffebee;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .form-control.invalid + small.invalid,
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext.invalid + small.invalid {
+  width: 100%;
+  color: #f44336;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .form-control.invalid + small.invalid:before,
+#ticket-modal .modal-content .modal-header .form-group .form-control-plaintext.invalid + small.invalid:before {
+  color: inherit;
+  font-family: "Font Awesome 5 Free";
+  content: "\F00D   ";
+  font-style: normal;
+  font-weight: 900;
+  text-decoration: inherit;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .input-group-prepend .input-group-text {
+  border-right: none;
+  background-color: transparent;
+}
+
+#ticket-modal .modal-content .modal-header .form-group .input-group-append .input-group-text,
+#ticket-modal .modal-content .modal-header .form-group .input-group-append .btn {
+  border: 1px solid #e0e0e0;
+  border-left: none;
+}
+
+#ticket-modal[data-mode=view] .modal-footer .btn-save,
+#ticket-modal[data-mode=view] .modal-footer .btn-clear,
+#ticket-modal[data-mode=view] .modal-footer .btn-cancel {
+  display: none;
+}
+
+#ticket-modal[data-mode=view] .modal-footer .btn-update,
+#ticket-modal[data-mode=view] .modal-footer .btn-assign {
+  display: initial;
+}
+
+#ticket-modal[data-mode=view] .form-group .btn-edit {
+  display: inline-block !important;
+}
+
+#ticket-modal[data-mode=view] .form-group .btn-save {
+  display: none;
+}
+
+#ticket-modal[data-mode=create] .modal-footer .btn-save,
+#ticket-modal[data-mode=create] .modal-footer .btn-clear {
+  display: initial;
+}
+
+#ticket-modal[data-mode=create] .modal-footer .btn-update,
+#ticket-modal[data-mode=create] .modal-footer .btn-assign,
+#ticket-modal[data-mode=create] .modal-footer .btn-cancel,
+#ticket-modal[data-mode=create] .modal-footer .btn-edit {
+  display: none;
+}
+
+#ticket-modal[data-mode=update] .modal-footer .btn-save,
+#ticket-modal[data-mode=update] .modal-footer .btn-cancel,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-save,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-cancel,
+#ticket-modal[data-mode=assign] .modal-footer .btn-save,
+#ticket-modal[data-mode=assign] .modal-footer .btn-cancel {
+  display: initial;
+}
+
+#ticket-modal[data-mode=update] .modal-footer .btn-edit,
+#ticket-modal[data-mode=update] .modal-footer .btn-assign,
+#ticket-modal[data-mode=update] .modal-footer .btn-clear,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-edit,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-assign,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-clear,
+#ticket-modal[data-mode=assign] .modal-footer .btn-edit,
+#ticket-modal[data-mode=assign] .modal-footer .btn-assign,
+#ticket-modal[data-mode=assign] .modal-footer .btn-clear {
+  display: none;
+}
+
+#ticket-modal[data-mode=hidden] .modal-footer .btn-save,
+#ticket-modal[data-mode=hidden] .modal-footer .btn-clear,
+#ticket-modal[data-mode=hidden] .modal-footer .btn-edit,
+#ticket-modal[data-mode=hidden] .modal-footer .btn-cancel {
+  display: none;
+}
+
+#ticket-modal[data-mode=status_update] .modal-footer .btn-save,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-clear,
+#ticket-modal[data-mode=status_update] .modal-footer .btn-edit {
+  display: none;
+}
+
+#ticket-modal[data-mode=status_update] .modal-footer .btn-cancel {
+  display: initial;
+}
+
+#ticket-modal[data-mode=status_update] .form-group .btn-edit {
+  display: none !important;
+}
+
+#ticket-modal[data-mode=status_update] .form-group .prev-status,
+#ticket-modal[data-mode=status_update] .form-group .btn-save {
+  display: inline-block !important;
+}
+
+.table tbody > tr > td.ticket-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 450px;
+}
+
+.status-new {
+  background-color: #e0e0e0;
+}
+
+.status-open {
+  background-color: #fff176;
+}
+
+.status-in-progress {
+  background-color: #64b5f6;
+}
+
+.status-needs-more-info {
+  background-color: #4dd0e1;
+}
+
+.status-resolved {
+  background-color: #ffb74d;
+}
+
+.status-closed {
+  background-color: #81c784;
+}
+
+.severity-unclassified {
+  background-color: #90a4ae;
+}
+
+.severity-low {
+  background-color: #aed581;
+}
+
+.severity-medium {
+  background-color: #4fc3f7;
+}
+
+.severity-high {
+  background-color: #ffd54f;
+}
+
+.severity-critical {
+  background-color: #e57373;
+}
+

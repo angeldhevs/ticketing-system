@@ -1,0 +1,50 @@
+$color_1: #999;
+$color_2: #333;
+$color_3: #666;
+$color_4: #B97745;
+$color_5: #777;
+$background_color_1: #F5F5F5;
+$background_color_2: #ccc;
+$background_color_3: #fafafa;
+$background_color_4: #fcfcfc;
+$border_color_1: #e2e2e2;
+
+.navbar-laravel {
+  background-color: $primary;
+  color: $text-icons;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+
+  button[data-target] {
+    border-radius: 0;
+    box-shadow: none;
+    color: $text-icons;
+    border-color: $text-icons;
+    font-size: 1rem;
+  }
+
+  .navbar-page-title {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .navbar-nav {
+    >li.nav-item {
+      >a.nav-link {
+        color: $text-icons;
+        padding: 0 0.5rem;
+
+        &.notification-list-toggle {
+          >.notification-count {
+            position: absolute;
+            top: -3px;
+            right: -5px;
+            border-radius: 5px !important;
+          }
+        }
+      }
+    }
+  }
+}

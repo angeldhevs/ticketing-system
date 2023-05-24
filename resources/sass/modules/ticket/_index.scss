@@ -1,0 +1,14 @@
+.table {
+  tbody {
+    > tr {
+      > td {
+        &.ticket-title {
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 450px;
+        }
+      }
+    }
+  }
+}
